@@ -34,13 +34,4 @@ jobs:
         python main.py
       env:
         api_key: ${{secrets.api_key}}
-    - name: Commit files
-      run: |
-        git config --local user.email "996625688+github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git commit -m "Add changes" -a
-    - name: Push changes
-      run: |
-        git remote set-url origin https://GITHUB_TOKEN:${{secrets.git_token}}@github.com/IceKyrin/auto_anime_info.git
-        git push -u origin master 
- 
+        git_token: ${{secrets.git_token}}
