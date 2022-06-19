@@ -41,8 +41,6 @@ jobs:
         git add .
         git commit -m "update" -a
     - name: Push change
-      env:
-          GITHUB_TOKEN: ${{secrets.git_token}}
       run: |
-          git push
+          https://${{secrets.git_token}}@github.com/IceKyrin/auto_anime_info.git/
       
