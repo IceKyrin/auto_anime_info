@@ -42,4 +42,4 @@ jobs:
         git commit -m "update" -a
     - name: Push change
       run: |
-          git push origin master
+          git push origin https://${{secrets.git_token}}@github.com/IceKyrin/auto_anime_info
