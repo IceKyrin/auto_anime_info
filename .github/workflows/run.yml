@@ -41,7 +41,9 @@ jobs:
         git add .
         git commit -m "update" -a
     - name: Push change
+      env:
+        token: ${{secrets.git_token}}
       run: |
-        git branch -M master
-        git remote set-url origin https://oauth2:${{secrets.git_token}}@github.com/IceKyrin/auto_anime_info.git
+        git branch -m master
+        git remote set-url origin https://${{secrets.git_token}}@github.com/IceKyrin/auto_anime_info.git
         git push -u origin master
