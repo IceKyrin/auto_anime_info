@@ -40,9 +40,8 @@ jobs:
         git config --global user.name "IceKyrin"
         git add .
         git commit -m "update" -a
-    - name: Push change
-      env:
-        token: ${{secrets.git_token}}
-      run: |
-        git remote set-url origin https://${{secrets.git_token}}@github.com/IceKyrin/auto_anime_info.git
-        git push -u origin https://${{secrets.git_token}}@github.com/IceKyrin/auto_anime_info.git
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{secrets.git_token}}
+        branch: master
