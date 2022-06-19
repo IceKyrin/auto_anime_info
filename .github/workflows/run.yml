@@ -44,4 +44,4 @@ jobs:
     - name: Push changes
       uses: actions/setup-python@v3
       with:
-        github_token: ${{secrets.git_token}}
+        token: ${{secrets.git_token}}
