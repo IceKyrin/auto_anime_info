@@ -37,12 +37,12 @@ jobs:
     - name: commit
       run: |
         git config --global user.email "996625688qq.com"
-        git config --global user.name IceKyrin
+        git config --global user.name "IceKyrin"
         git add .
         git commit -m "update" -a
     - name: Push change
       env:
-          token: ${{secrets.git_token}}
+          GITHUB_TOKEN: ${{secrets.git_token}}
       run: |
           git push
       
