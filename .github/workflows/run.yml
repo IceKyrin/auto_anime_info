@@ -40,6 +40,7 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git commit -m "Add changes" -a
     - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{secrets.git_token}}
+      run: |
+        git remote set-url origin https://GITHUB_TOKEN:${{secrets.git_token}}@github.com/IceKyrin/auto_anime_info.git
+        git push -u origin master 
+ 
