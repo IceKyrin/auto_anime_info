@@ -44,6 +44,5 @@ jobs:
       env:
         token: ${{secrets.git_token}}
       run: |
-        git branch -m master
         git remote set-url origin https://${{secrets.git_token}}@github.com/IceKyrin/auto_anime_info.git
-        git push -u origin master
+        git push -u origin https://${{secrets.git_token}}@github.com/IceKyrin/auto_anime_info.git
