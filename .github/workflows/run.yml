@@ -25,3 +25,5 @@ jobs:
     - name: update_anime_info
       run: |
         main.py
+      env:
+        api_key: ${{secrets.api_key}}
